@@ -17,7 +17,7 @@
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  /* s: column; */
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
@@ -35,4 +35,90 @@
   to {
     transform: rotate(360deg);
   }
+}
+.cursor {
+  position: fixed;
+  width: 20px; /* Adjust size */
+  height: 20px; /* Adjust size */
+  border: 2px solid white; /* Outer circle */
+  border-radius: 50%;
+  pointer-events: none; /* Prevent interaction */
+  transition: transform 0.2s ease; /* Smooth movement */
+  z-index: 1000; /* Ensure it's on top */
+}
+
+.cursor-hover {
+  /* Styles when hovering over a cursor-pointer element */
+  transform: scale(1.5); /* Scale effect */
+}
+
+.cursor-click {
+  /* Styles for click effect */
+  background-color: rgba(200, 200, 200, 0.5); /* Example click effect */
+  transform: scale(1.2); /* Small zoom effect on click */
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom hover effect */
+.hover-move {
+  transition: transform 0.3s ease-in-out;
+}
+
+.hover-move:hover {
+  transform: translate(-5px, -5px) rotate(1deg);
+}
+
+.hover-move:active {
+  transform: translate(5px, 5px) rotate(-1deg);
+}
+/* Custom styles can be added in your CSS file, if needed */
+/* .h-screen {
+  height: 100vh;
+} */
+.flex {
+  display: flex;
+}
+a {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* App.css */
+
+.cursor {
+  position: fixed;
+  width: 40px; /* Increase size */
+  height: 40px; /* Increase size */
+  /* background-color: rgba(255, 255, 255, 0.8); Add some transparency */
+  border-radius: 50%; /* Make it circular */
+  pointer-events: none; /* Ensure it doesn't block other elements */
+  transition: transform 0.2s ease; /* Smooth zoom effect */
+  z-index: 9999; /* Make sure it appears above other content */
+}
+
+.cursor-hover {
+  transform: scale(1.5); /* Scale up the cursor on hover */
+}
+
+.cursor-click {
+  transform: scale(1.5); /* Scale down temporarily on click */
+  transition: transform 0.1s ease; /* Smooth transition for click effect */
+}
+/* Style the sidebar menu items based on scroll direction */
+.sidebar-item.scroll-up {
+  transform: translateY(-10px);
+  transition: transform 0.3s ease, color 0.3s;
+  color: #3498db; /* Color for scroll-up */
+}
+
+.sidebar-item.scroll-down {
+  transform: translateY(10px);
+  transition: transform 0.3s ease, color 0.3s;
+  color: #e74c3c; /* Color for scroll-down */
+}
+
+/* Reset styles when scroll animation ends */
+.sidebar-item:not(.scroll-up):not(.scroll-down) {
+  transform: translateY(0);
+  color: inherit;
 }

@@ -1,13 +1,35 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
+
+
+/* Custom styles can be added in your CSS file, if needed */
+.h-screen {
+    height: 10vh;
+  }
+  .flex {
+    display: flex;
+  }
+  .page{
+    transition: top 1s  ease-in-out;
+  }
+  .scroll-down {
+    background-color: #ffebee; /* Example: highlight background for scroll down */
+    transform: translateY(5px);
+    transition: transform 0.3s, background-color 0.3s;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.scroll-up {
+    background-color: #e8f5e9; /* Example: highlight background for scroll up */
+    transform: translateY(-5px);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.sidebar-item {
+    transition: color 0.3s;
 }

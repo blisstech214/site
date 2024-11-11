@@ -1,23 +1,76 @@
-import logo from './logo.svg';
-import './App.css';
+
+import { BrowserRouter } from "react-router-dom";
+
+import React, { useEffect, useState } from "react";
+import Dashboard from "./Component/Dashboard";
+import "./App.css"; // Ensure this file includes the custom cursor CSS
+import 'aos/dist/aos.css';
+import AOS from 'aos';
+
+AOS.init();
 
 function App() {
+  const [cursorClass, setCursorClass] = useState("");
+  const [clickClass, setClickClass] = useState("");
+  const [clickPosition, setClickPosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const cursor = document.querySelector(".cursor");
+
+    // Update cursor position on mouse move
+    const moveCursor = (e) => {
+      cursor.style.left = `${e.pageX}px`;
+      cursor.style.top = `${e.pageY}px`;
+    };
+
+    // Hover effect for interactive elements
+    const addHoverEffect = () => setCursorClass("cursor-hover");
+    const removeHoverEffect = () => setCursorClass("");
+
+    // Click effect
+    const handleClick = (e) => {
+      setClickPosition({ x: e.pageX, y: e.pageY });
+      setClickClass("cursor-click");
+      setTimeout(() => setClickClass(""), 600); // Remove the effect after 0.6s
+    };
+
+    // Attach event listeners for cursor movement and click
+    window.addEventListener("mousemove", moveCursor);
+    window.addEventListener("click", handleClick);
+
+    // Attach hover effects only to elements with cursor-pointer class
+    const hoverElements = document.querySelectorAll(".cursor-pointer");
+    hoverElements.forEach((el) => {
+      el.addEventListener("mouseenter", addHoverEffect);
+      el.addEventListener("mouseleave", removeHoverEffect);
+    });
+
+    // Cleanup event listeners on unmount
+    return () => {
+      window.removeEventListener("mousemove", moveCursor);
+      window.removeEventListener("click", handleClick);
+      hoverElements.forEach((el) => {
+        el.removeEventListener("mouseenter", addHoverEffect);
+        el.removeEventListener("mouseleave", removeHoverEffect);
+      });
+    };
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* Cursor element */}
+      <div
+        className={`cursor ${cursorClass} ${clickClass}`}
+        style={{
+          left: `${clickPosition.x}px`,
+          top: `${clickPosition.y}px`,
+        }}
+      ></div>
+
+    <BrowserRouter>
+      <Dashboard />
+    </BrowserRouter>
+ 
     </div>
   );
 }

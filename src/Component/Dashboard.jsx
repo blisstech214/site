@@ -7,7 +7,7 @@ import Contact from "./Contact";
 // import Portfolio from "./Portfolio";
 import Team from "./Team";
 import Home from "./Home";
-
+import Aos from "aos";
 function Dashboard() {
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
   const navigate = useNavigate();
@@ -27,7 +27,17 @@ function Dashboard() {
   useEffect(() => {
     setCurrentPath(location.pathname);
   }, [location]);
+  useEffect(() => {
+    const handleScroll = () => {
+      Aos.refresh();
+    };
 
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   const handleScroll = (e) => {
     if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
 

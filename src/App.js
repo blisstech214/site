@@ -1,19 +1,26 @@
-
 import { BrowserRouter } from "react-router-dom";
 
 import React, { useEffect, useState } from "react";
 import Dashboard from "./Component/Dashboard";
 import "./App.css"; // Ensure this file includes the custom cursor CSS
-import 'aos/dist/aos.css';
-import AOS from 'aos';
+import "aos/dist/aos.css";
+import AOS from "aos";
 
-AOS.init();
+
 
 function App() {
   const [cursorClass, setCursorClass] = useState("");
   const [clickClass, setClickClass] = useState("");
   const [clickPosition, setClickPosition] = useState({ x: 0, y: 0 });
 
+
+  useEffect(()=>{
+    AOS.init(
+      {
+        once:false
+      }
+    );
+  })
   useEffect(() => {
     const cursor = document.querySelector(".cursor");
 
@@ -56,6 +63,25 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      
+        AOS.init(
+          {
+            once:false,
+            duration:1000
+          }
+        );
+      console.log("mini");
+      
+    };
+
+    window.addEventListener("wheel", handleScroll);
+
+    return () => {
+      window.removeEventListener("wheel", handleScroll);
+    };
+  }, []);
   return (
     <div className="App">
       {/* Cursor element */}
@@ -67,10 +93,9 @@ function App() {
         }}
       ></div>
 
-    <BrowserRouter>
-      <Dashboard />
-    </BrowserRouter>
- 
+      <BrowserRouter>
+        <Dashboard />
+      </BrowserRouter>
     </div>
   );
 }

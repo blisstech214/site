@@ -7,7 +7,7 @@ import Contact from "./Contact";
 // import Portfolio from "./Portfolio";
 import Team from "./Team";
 import Home from "./Home";
-import AOS from "aos";
+
 function Dashboard() {
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
   const navigate = useNavigate();
@@ -50,9 +50,6 @@ function Dashboard() {
         });
       }
     }, 300); // Reduced debounce delay for a more immediate effect
-    // setTimeout(() => {
-    //   AOS.refresh();
-    // }, 2000); // Delay to ensure smooth scroll effect
   };
 
   useEffect(() => {

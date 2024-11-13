@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ContactImage from "../assets/contact-bg.jpg";
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 import { FaGithub, FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
+import AOS from "aos";
 
-const Contact = () => {
+const Contact = (props) => {
+ 
   return (
     <div className="relative w-full h-screen">
       {/* Background Image */}

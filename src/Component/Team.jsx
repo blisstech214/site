@@ -100,7 +100,7 @@ function Team() {
   const visibleIndices = getVisibleIndices();
 
   return (
-    <div className="relative h-screen w-full">
+    <div className="relative h-screen w-full h-auto">
       <img
         src={TeamImage}
         alt="Team background"

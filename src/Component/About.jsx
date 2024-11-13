@@ -81,7 +81,7 @@ function About() {
         <h1
           className="text-md sm:text-lg md:ml-0 ml-10  md:text-xl lg:text-2xl text-slate-200 font-semibold mb-2"
           data-aos="fade-right"
-          data-aos-anchor-placement="center-bottom" // Trigger when the center of element reaches bottom
+          duration="1000" // Trigger when the center of element reaches bottom
         >
           Discover the Feature
         </h1>
@@ -93,7 +93,7 @@ function About() {
           Empowering Digital Journeys Together
         </h1>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 md:grid-cols-2 md:mt-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 md:mt-12">
           {services.map(({ icon, title, description }, index) => (
             <div
               key={index}

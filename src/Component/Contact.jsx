@@ -1,11 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import ContactImage from "../assets/contact-bg.jpg";
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 import { FaGithub, FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
-import AOS from "aos";
 
-const Contact = (props) => {
- 
+const Contact = () => {
   return (
     <div className="relative w-full h-screen">
       {/* Background Image */}
@@ -31,7 +29,7 @@ const Contact = (props) => {
       </div>
 
       {/* Footer Text */}
-      <div className="absolute bottom-5 right-5 text-white text-sm sm:text-base md:text-lg text-gray-200">
+      <div className="absolute bottom-5 right-5 text-white text-sm sm:text-base lg:text-lg text-gray-200">
         © 2024 MegaOne
       </div>
 

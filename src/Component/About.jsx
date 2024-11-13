@@ -79,27 +79,27 @@ function About() {
 
       <div className="relative z-10 flex flex-col items-start text-left h-full px-4 sm:px-6 md:px-10 lg:px-24 p-10">
         <h1
-          className="text-md sm:text-lg md:ml-0 ml-10  md:text-xl lg:text-2xl text-slate-200 font-semibold mb-2"
+          className="text-md sm:text-lg   md:text-xl lg:text-2xl text-slate-200 font-semibold mb-2"
           data-aos="fade-right"
-          duration="1000" // Trigger when the center of element reaches bottom
+          data-aos-duration="1000"
         >
           Discover the Feature
         </h1>
         <h1
           className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white font-semibold"
           data-aos="fade-right"
-          data-aos-anchor-placement="center-bottom"
+          data-aos-duration="1000"
         >
           Empowering Digital Journeys Together
         </h1>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 md:mt-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  mt-5 lg:mt-12">
           {services.map(({ icon, title, description }, index) => (
             <div
               key={index}
               className="flex flex-col items-start p-4 rounded-lg bg-opacity-80"
               data-aos="zoom-in"
-              data-aos-anchor-placement="top-bottom"
+              data-aos-duration="1000"
             >
               <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 md:w-16 text-white md:h-16 mb-3 bg-transparent rounded-full hover:bg-white hover:text-black transition-all duration-300 ease-in-out">
                 {React.cloneElement(icon, {

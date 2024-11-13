@@ -63,7 +63,7 @@ function Service() {
       </div>
 
       {/* Footer Text */}
-      <div className="absolute bottom-5 text-white text-lg right-5 text-gray-200">
+      <div className="absolute bottom-5 text-white text-base  lg:text-lg right-5">
         © 2024 MegaOne
       </div>
 

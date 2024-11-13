@@ -48,7 +48,7 @@ function Home() {
       </div>
 
       {/* Footer Text */}
-      <div className="absolute bottom-5 right-5 text-white">© 2024 MegaOne</div>
+      <div className="absolute bottom-5 right-5 lg:text-lg text-base text-white">© 2024 MegaOne</div>
 
       <div
         className="relative grid grid-cols-1 md:grid-cols-2 h-full items-center justify-start p-6 md:p-20"

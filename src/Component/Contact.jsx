@@ -39,29 +39,29 @@ const Contact = () => {
         data-aos="fade-right"
         data-aos-duration="1000"
       >
-        <div className="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-20">
+        <div className="flex flex-col md:flex-row items-center space-y-0 lg:space-x-20">
           {/* Left Side: Contact Form */}
           <div className="flex-1 px-8 ">
-            <h2 className="text-xl sm:text-xl md:text-3xl lg:text-5xl font-semibold text-left md:text-left py-6">
+            <h2 className="text-lg lg:text-3xl font-semibold text-left md:text-left py-6">
               Questions? <br />
               Let's Get In Touch
             </h2>
             <form className="lg:space-y-4 space-y-2 text-left lg:py-5">
               <div>
-                <label htmlFor="name" className="block text-sm sm:text-base">
+                <label htmlFor="name" className="block text-sm lg:text-lg">
                   Name
                 </label>
                 <input
                   type="text"
                   id="name"
                   required
-                  className="mt-1 font-semibold bg-transparent border-b-2 border-gray-400 focus:outline-none focus:border-blue-500 w-full p-2 text-sm md:text-base"
+                  className="font-semibold bg-transparent border-b-2 border-gray-400 focus:outline-none focus:border-blue-500 w-full lg:p-2 p-0 text-sm md:text-base"
                 />
               </div>
               <div>
                 <label
                   htmlFor="contact-no"
-                  className="block text-sm sm:text-base"
+                  className="block text-sm lg:text-lg"
                 >
                   Contact No
                 </label>
@@ -69,34 +69,34 @@ const Contact = () => {
                   type="number"
                   id="contact-no"
                   required
-                  className="mt-1 font-semibold bg-transparent border-b-2 border-gray-400 focus:outline-none focus:border-blue-500 w-full p-2 text-sm md:text-base"
+                  className=" font-semibold bg-transparent border-b-2 border-gray-400 focus:outline-none focus:border-blue-500 w-full lg:p-2 p-0 text-sm md:text-base"
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm sm:text-base">
+                <label htmlFor="email" className="block text-sm lg:text-base">
                   Email
                 </label>
                 <input
                   type="email"
                   id="email"
                   required
-                  className="mt-1 font-semibold bg-transparent border-b-2 border-gray-400 focus:outline-none focus:border-blue-500 w-full p-2 text-sm md:text-base"
+                  className="font-semibold bg-transparent border-b-2 border-gray-400 focus:outline-none focus:border-blue-500 w-full lg:p-2 p-2 text-sm md:text-base"
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm sm:text-base">
+                <label htmlFor="message" className="block text-sm lg:text-base">
                   Type Your Message Here
                 </label>
                 <textarea
                   id="message"
                   required
-                  className="mt-1 font-semibold bg-transparent border-b-2 border-gray-400 focus:outline-none focus:border-blue-500 w-full p-2 text-sm md:text-base"
+                  className="font-semibold bg-transparent border-b-2 border-gray-400 focus:outline-none focus:border-blue-500 w-full lg:p-2  p-0 text-sm md:text-base"
                   rows="4"
                 ></textarea>
               </div>
               <button
                 type="submit"
-                className="w-full bg-blue-500 text-sm md:text-lg font-semibold text-white border-2 rounded-full p-3 border-white hover:bg-blue-600 transition"
+                className="w-full bg-blue-500 text-sm md:text-lg font-semibold text-white border-2 rounded-full lg:p-3 p-0  border-white hover:bg-blue-600 transition"
               >
                 SUBMIT INFORMATION
               </button>
@@ -104,25 +104,25 @@ const Contact = () => {
           </div>
 
           {/* Right Side: Company Information */}
-          <div className="flex-1 lg:px-4 p-2 text-left md:ml-0 ml-10">
+          <div className="flex-1 lg:px-4 p-2 text-left lg:ml-0 ml-10">
             <div className="text-left">
-              <h1 className="text-lg md:text-xl lg:text-3xl font-light mb-4">
+              <h1 className="text-base   lg:text-2xl font-light mb-1">
                 Office Location
               </h1>
-              <p className="text-base md:text-lg lg:text-xl">
+              <p className="text-base lg:text-xl">
                 There are many variations of passages of Lorem Ipsum...
               </p>
             </div>
-            <div className="space-y-2 lg:mt-8 mt-4 text-sm md:text-base lg:text-lg">
+            <div className="space-y-2 lg:mt-8 mt-4 text-sm  lg:text-lg">
               <div className="flex items-center justify-start">
                 <FaMapMarkerAlt className="text-gray-600 mr-5 text-xl" />
-                <span className="text-gray-200">
+                <span className="text-gray-200 text-base">
                   Vandematram Road, Ahmedabad, Gujarat, India 382461
                 </span>
               </div>
               <div className="flex items-center justify-start">
                 <FaEnvelope className="text-gray-600 mr-5" />
-                <span className="text-gray-200 text-left">
+                <span className="text-gray-200  lg:mb-0 mb-6 text-base text-left">
                   blisstech214@gmail.com
                 </span>
               </div>

@@ -129,11 +129,11 @@ function Team() {
         >
           {visibleIndices.map((index) => {
             const isCenter = index === visibleIndices[1];
-            const cardSize = isCenter ? "scale-60" : "scale-70";
+            const cardSize = isCenter ? "scale-60" : "scale-50";
             return (
               <div
                 key={index}
-                className={`relative ${cardSize} flex-row transform lg:flex-col  flex flex-2 transition-all bg-white p-2 duration-300`}
+                className={`relative ${cardSize} flex-row transform lg:flex-col  flex  transition-all bg-white  duration-300`}
               >
                 <img
                   className="w-full h-20 lg:h-48 text-base lg:text-lg object-center p-3 opacity-90"

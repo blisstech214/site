@@ -122,3 +122,20 @@ a {
   transform: translateY(0);
   color: inherit;
 }
+/* Make sure sidebar stays fixed on all screen sizes */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px; /* Adjust as needed */
+  z-index: 100;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%; /* Full-width on mobile */
+  }
+}

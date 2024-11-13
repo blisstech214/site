@@ -8,24 +8,37 @@ import "aos/dist/aos.css";
 function Home() {
   useEffect(() => {
     AOS.init();
-  }, []);
+    AOS.refresh(); // Reinitialize AOS every time page loads
+  }, []); // Empty dependency array to run once on page load
+
+  // Static content variables
+  const heading = "Bringing Limitless Ideas to Successful Solutions...";
+  const description =
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis debitis, et obcaecati, numquam suscipit deserunt excepturi error eligendi nemo.";
+  const buttonText = "Learn More";
+  const socialIcons = [
+    { icon: FaGithub, name: "GitHub" },
+    { icon: FaFacebook, name: "Facebook" },
+    { icon: FaTwitter, name: "Twitter" },
+    { icon: FaLinkedin, name: "LinkedIn" },
+  ];
 
   return (
-    <div className="relative  overflow-hidden">
+    <div className="relative overflow-hidden h-screen w-full">
       {/* Background Image */}
       <img
         src={HomeImage}
         alt="background"
-        className="absolute inset-0 w-full  object-cover"
+        className="absolute inset-0 w-full h-full object-cover"
       />
 
       {/* Color Overlay */}
-      <div className="absolute inset-0 bg-Green bg-blend-overlay opacity-80"></div>
+      <div className="absolute inset-0 bg-Green h-screen bg-blend-overlay opacity-80"></div>
 
       {/* Social Media Icons */}
       <div className="absolute top-5 right-5 text-lg flex space-x-3 text-white">
-        {[FaGithub, FaFacebook, FaTwitter, FaLinkedin].map((Icon, index) => (
-          <div key={index} className="relative group">
+        {socialIcons.map(({ icon: Icon, name }, index) => (
+          <div key={index} className="relative group" aria-label={name}>
             <Icon className="text-gray-200 hover:text-pink-500 transition-colors duration-300" />
             <span className="absolute inset-0 flex items-center justify-center rounded-full transform scale-0 group-hover:scale-100 group-hover:animate-ping transition-all duration-300 ease-out">
               <span className="bg-pink-500 opacity-50 rounded-full w-10 h-10"></span>
@@ -33,69 +46,37 @@ function Home() {
           </div>
         ))}
       </div>
-      <div className="absolute top-5 right-5 flex space-x-3 text-white text-lg">
-        {/* GitHub Icon */}
-        <div className="relative group">
-          <FaGithub className="text-gray-200 hover:text-pink-500 transition-colors duration-300" />
-          <span className="absolute inset-0 flex items-center justify-center rounded-full transform scale-0 group-hover:scale-100 group-hover:animate-ping transition-all duration-300 ease-out">
-            <span className="bg-pink-500 opacity-50 rounded-full w-10 h-10"></span>
-          </span>
-        </div>
 
-        {/* Facebook Icon */}
-        <div className="relative group">
-          <FaFacebook className="text-gray-200 hover:text-pink-500 transition-colors duration-300" />
-          <span className="absolute inset-0 flex items-center justify-center rounded-full transform scale-0 group-hover:scale-100 group-hover:animate-ping transition-all duration-300 ease-out">
-            <span className="bg-pink-500 opacity-50 rounded-full w-10 h-10"></span>
-          </span>
-        </div>
-
-        {/* Twitter Icon */}
-        <div className="relative group">
-          <FaTwitter className="text-gray-200 hover:text-pink-500 transition-colors duration-300" />
-          <span className="absolute inset-0 flex items-center justify-center rounded-full transform scale-0 group-hover:scale-100 group-hover:animate-ping transition-all duration-300 ease-out">
-            <span className="bg-pink-500 opacity-50 rounded-full w-10 h-10"></span>
-          </span>
-        </div>
-
-        {/* LinkedIn Icon */}
-        <div className="relative group">
-          <FaLinkedin className="text-gray-200 hover:text-pink-500 transition-colors duration-300" />
-          <span className="absolute inset-0 flex items-center justify-center rounded-full transform scale-0 group-hover:scale-100 group-hover:animate-ping transition-all duration-300 ease-out">
-            <span className="bg-pink-500 opacity-50 rounded-full w-10 h-10"></span>
-          </span>
-        </div>
-      </div>
       {/* Footer Text */}
-      <div className="absolute bottom-5 text-white right-5 ">
-        © 2024 MegaOne
-      </div>
+      <div className="absolute bottom-5 right-5 text-white">© 2024 MegaOne</div>
 
-      <div className="relative grid grid-cols-1 md:grid-cols-2 h-full items-center p-6 md:p-20">
+      <div
+        className="relative grid grid-cols-1 md:grid-cols-2 h-full items-center justify-start p-6 md:p-20"
+        data-aos="fade-up" // Added fade-left
+        data-aos-duration="1000"
+      >
         {/* Left Column - Text Content */}
         <div
-          className="text-white  items-center justify-start   text-left space-y-6 py-20 md:py-32"
-          data-aos="fade-right"
+          className="text-white text-left space-y-6 py-16 md:py-32"
+          data-aos="fade-right" // Added fade-left
           data-aos-duration="1000"
         >
-          <h1 className="text-4xl md:text-6xl font-semibold text-left leading-tight">
-            Bringing Limitless Ideas to Successful Solutions...
+          <h1 className="text-xl sm:text-3xl md:text-2xl lg:text-6xl text-left font-semibold leading-tight">
+            {heading}
           </h1>
-          <p className="text-sm md:text-lg text-left leading-relaxed">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-            debitis, et obcaecati, numquam suscipit deserunt excepturi error
-            eligendi nemo.
+          <p className="text-base sm:text-lg md:text-xl text-left leading-relaxed">
+            {description}
           </p>
-          <button className="border-2 px-8 items-center justify-start   text-left md:px-12 lg:px-16 py-2 md:py-3 text-lg font-semibold rounded-full text-white hover:bg-white hover:text-black transition-colors">
-            Learn More
+          <button className="border-2 px-6 sm:px-8 md:px-10 text-left lg:px-12 py-2 md:py-3 text-base sm:text-lg font-semibold rounded-full text-white hover:bg-white hover:text-black transition-colors">
+            {buttonText}
           </button>
         </div>
 
         {/* Right Column - SVG and Clipped Image */}
         <div
           className="flex items-center justify-center h-full"
-          data-aos="fade-up"
-          data-aos-delay="1000"
+          data-aos="fade-left" // Added fade-right
+          data-aos-delay="500"
         >
           <div className="relative w-3/4 max-w-xs md:max-w-md lg:max-w-lg">
             <svg

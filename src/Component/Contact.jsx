@@ -1,4 +1,3 @@
-
 import React from "react";
 import ContactImage from "../assets/contact-bg.jpg";
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
@@ -36,18 +35,18 @@ const Contact = () => {
 
       {/* Main Content */}
       <div
-        className="relative z-10 flex items-center justify-center h-full w-full text-white px-4"
+        className="relative flex items-center justify-center h-full w-full text-white"
         data-aos="fade-right"
         data-aos-duration="1000"
       >
-        <div className="flex flex-col md:flex-row items-center max-w-4xl lg:max-w-6xl mx-auto space-y-6 md:space-y-0 md:space-x-8">
+        <div className="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-20">
           {/* Left Side: Contact Form */}
-          <div className="flex-1 px-4">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-left md:text-left py-6">
+          <div className="flex-1 px-8 ">
+            <h2 className="text-xl sm:text-xl md:text-3xl lg:text-5xl font-semibold text-left md:text-left py-6">
               Questions? <br />
               Let's Get In Touch
             </h2>
-            <form className="space-y-4 text-left py-5">
+            <form className="lg:space-y-4 space-y-2 text-left lg:py-5">
               <div>
                 <label htmlFor="name" className="block text-sm sm:text-base">
                   Name
@@ -105,16 +104,16 @@ const Contact = () => {
           </div>
 
           {/* Right Side: Company Information */}
-          <div className="flex-1 px-4 p-2 text-left md:ml-0 ml-10">
+          <div className="flex-1 lg:px-4 p-2 text-left md:ml-0 ml-10">
             <div className="text-left">
-              <h1 className="text-xl md:text-3xl font-light mb-4">
+              <h1 className="text-lg md:text-xl lg:text-3xl font-light mb-4">
                 Office Location
               </h1>
-              <p className="text-base sm:text-lg md:text-xl">
+              <p className="text-base md:text-lg lg:text-xl">
                 There are many variations of passages of Lorem Ipsum...
               </p>
             </div>
-            <div className="space-y-2 mt-8 text-sm sm:text-base md:text-lg">
+            <div className="space-y-2 lg:mt-8 mt-4 text-sm md:text-base lg:text-lg">
               <div className="flex items-center justify-start">
                 <FaMapMarkerAlt className="text-gray-600 mr-5 text-xl" />
                 <span className="text-gray-200">

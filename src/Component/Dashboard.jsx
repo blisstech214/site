@@ -7,7 +7,9 @@ import Contact from "./Contact";
 // import Portfolio from "./Portfolio";
 import Team from "./Team";
 import Home from "./Home";
+import focusOutHome from "./Home";
 
+import Aos from "aos";
 function Dashboard() {
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
   const navigate = useNavigate();
@@ -60,6 +62,18 @@ function Dashboard() {
     };
   }, [currentSectionIndex]);
 
+  const translateArray = {
+    "/": [0, 100, 200, 300, 400],
+    "/about": [-100, 0, 100, 200, 300],
+    "/service": [-200, -100, 0, 100, 200],
+    "/team": [-300, -200, -100, 0, 100],
+    "/contact": [-400, -300, -200, -100, 0],
+  };
+  const [translate, setTranslate] = useState([0, 100, 200, 300, 400]);
+  useEffect(() => {
+    setTranslate(translateArray[currentPath]);
+  }, [currentPath]);
+
   return (
     <div className="flex w-full h-screen">
       <Sidebar
@@ -76,40 +90,34 @@ function Dashboard() {
           <div
             className={`page absolute w-full h-full transition-transform duration-500`}
             style={{
-              transform: `translateY(${currentPath === "/" ? "0%" : "-100%"})`,
+              transform: `translateY(${translate[0]}%)`,
             }}
           >
-            <Home />
+            <Home focusOut={currentPath !== "/"} />
           </div>
           <div
             className={`page absolute w-full h-full transition-transform duration-500`}
             style={{
-              transform: `translateY(${
-                currentPath === "/about" ? "0%" : "-100%"
-              })`,
+              transform: `translateY(${translate[1]}%)`,
             }}
           >
-            <About />
+            <About focusOut={currentPath !== "/about"} />
           </div>
           <div
             className={`page absolute w-full h-full transition-transform duration-500`}
             style={{
-              transform: `translateY(${
-                currentPath === "/service" ? "0%" : "-100%"
-              })`,
+              transform: `translateY(${translate[2]}%)`,
             }}
           >
-            <Service />
+            <Service focusOut={currentPath !== "/service"} />
           </div>
           <div
             className={`page absolute w-full h-full transition-transform duration-500`}
             style={{
-              transform: `translateY(${
-                currentPath === "/team" ? "0%" : "-100%"
-              })`,
+              transform: `translateY(${translate[3]}%)`,
             }}
           >
-            <Team />
+            <Team focusOut={currentPath !== "/team"} />
           </div>
           {/* <div
             className={`page absolute w-full h-full transition-transform duration-500 md:block hidden`}
@@ -124,12 +132,10 @@ function Dashboard() {
           <div
             className={`page absolute w-full h-full transition-transform duration-500`}
             style={{
-              transform: `translateY(${
-                currentPath === "/contact" ? "0%" : "-100%"
-              })`,
+              transform: `translateY(${translate[4]}%)`,
             }}
           >
-            <Contact />
+            <Contact focusOut={currentPath !== "/contact"} />
           </div>
         </div>
       </div>

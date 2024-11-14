@@ -114,12 +114,12 @@ const Contact = ({ focusOut }) => {
               </div>
 
               {/* Right Side: Company Information */}
-              <div className="flex-1 lg:px-4 p-2 text-left lg:ml-0 ml-10">
+              <div className="flex-1 lg:px-4 p-2 lg:mt-0 md:mt-0 mt-4 text-left lg:ml-0 ml-10">
                 <div className="text-left">
-                  <h1 className="text-base   lg:text-2xl font-light mb-1">
+                  <h1 className="text-base   lg:text-2xl font-semibold mb-1">
                     Office Location
                   </h1>
-                  <p className="text-base lg:text-xl">
+                  <p className="text-base lg:block md:block hidden lg:text-xl">
                     There are many variations of passages of Lorem Ipsum...
                   </p>
                 </div>
@@ -131,7 +131,7 @@ const Contact = ({ focusOut }) => {
                     </span>
                   </div>
                   <div className="flex items-center justify-start">
-                    <FaEnvelope className="text-gray-600 mr-5" />
+                    <FaEnvelope className="text-gray-600 mr-5 text-xl" />
                     <span className="text-gray-200  lg:mb-0 mb-6 text-base text-left">
                       blisstech214@gmail.com
                     </span>

@@ -71,7 +71,7 @@ function About({ focusOut }) {
             © 2024 MegaOne
           </div>
 
-          <div className="relative z-10 flex flex-col items-start text-left h-full px-4 sm:px-6 md:px-10 lg:px-24 p-5">
+          <div className="relative z-10 flex flex-col items-start text-left h-full px-4 py:m-0 py:m-0 py-16  sm:px-6 md:px-10 lg:px-24 p-5">
             <h1
               className="text-xs sm:text-md md:text-xl lg:text-2xl text-slate-200 font-semibold mb-2"
               data-aos="fade-right"

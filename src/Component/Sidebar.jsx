@@ -101,7 +101,7 @@ function Sidebar({ currentPath, menuItems }) {
         <div className="text-black mt-5 text-left">@ 2024 MegaOne</div>
       </section>
 
-      <div className="mt-5">
+      <div className="mt-5 lg:w-28 md:w-20 w-16">
         <div>
           {/* Hamburger Icon to open sidebar (desktop) */}
           <div className="lg:ml-12 ml-7 font-bold lg:py-4 py-2 lg:z-20">
@@ -109,7 +109,7 @@ function Sidebar({ currentPath, menuItems }) {
           </div>
 
           {/* Pagination-like Circles with Hyphens */}
-          <div className="lg:ml-5 mt-16 p-2 lg:py-8">
+          <div className="lg:ml-3 mt-16 p-2 lg:py-8">
             <ul className="space-y-8 flex flex-col items-center">
               {menuItems.map((item, index) => (
                 <li
